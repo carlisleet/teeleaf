@@ -10,7 +10,7 @@ As I'm too lazy to build the automation into the app it can be used in conjuncti
 
 for example 
 
-```
+```python
 #!/usr/bin/env python3
 from datetime import datetime, timedelta
 import calendar
