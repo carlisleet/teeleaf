@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html>
+<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hello TEELEAFER</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+    (document.querySelectorAll('.notification .delete') || []).forEach(($delete) => {
+      const $notification = $delete.parentNode;
+
+      $delete.addEventListener('click', () => {
+        $notification.parentNode.removeChild($notification);
+      });
+    });
+  });
+  </script>
+    <section class="hero is-small is-link">
+        <div class="hero-body">
+          <p class="title">
+            TEELEAF - Golf Club Teetime Brute Forcer
+          </p>
+          <p class="subtitle">
+            Web application to automate booking of prefered teetime at you Golf Club.
+          </p>
+        </div>
+      </section>
+  </head>
+  <body>
+  <section class="section">
+    <div class="container">
+        <div class="content">
+            <form action = "/result" method ="POST" autocomplete='on'>
+             <div class="field">
+                <p class="control has-icons-left has-icons-right">
+                  <input class="input" type="email" placeholder="Login" name="memberid">
+                  <span class="icon is-small is-left">
+                    <i class="fas fa-envelope"></i>
+                  </span>
+                  <span class="icon is-small is-right">
+                    <i class="fas fa-check"></i>
+                  </span>
+                </p>
+              </div>
+              <div class="field">
+                <p class="control has-icons-left">
+                  <input class="input" type="password" placeholder="PIN" name="pin">
+                  <span class="icon is-small is-left">
+                    <i class="fas fa-lock"></i>
+                  </span>
+                </p>
+              </div>
+             <div class="field">
+                <p class="control has-icons-left">
+                  <input class="input" type="date" name="date">
+                  <span class="icon is-small is-left">
+                    <i class="fa-solid fa-calendar"></i>
+                  </span>
+                </div>
+               </p>
+              </div>
+              <label class="label">Course</label>
+              <div class="field is-horizontal">
+                <div class="select is-multiple">
+                  <select name="course">
+                      <option selected>Course</option>
+                      <option value="&course=1&group=1">Course - Standard</option>
+                      <option value="&course=2&group=1">Course - 9 hole</option>
+
+                </select>
+              </div>
+            </div>
+              <label class="label">Number of slots</label>
+              <div class="field is-horizontal">
+                    <div class="select is-multiple">
+                        <select name="numslots">
+                            <option selected>Number of slots</option>
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                        </select>
+                    </div>
+              </div>
+              <label class="label">Choose a timeslot to brute force</label>
+              <div class="field is-horizontal">
+                    <div class="select is-multiple">
+                        <select name="starttime">
+                            <option selected>Start time</option>
+                            <option>07:04</option>
+                            <option>07:12</option>
+                            <option>07:20</option>
+                            <option>07:28</option>
+                            <option>07:36</option>
+                            <option>07:44</option>
+                            <option>07:52</option>
+                            <option>08:00</option>
+                            <option>08:08</option>
+                            <option>08:16</option>
+                            <option>08:24</option>
+                            <option>08:32</option>
+                            <option>08:40</option>
+                            <option>08:48</option>
+                            <option>08:56</option>
+                            <option>09:04</option>
+                            <option>09:12</option>
+                            <option>09:20</option>
+                            <option>09:28</option>
+                            <option>09:36</option>
+                            <option>09:44</option>
+                            <option>09:52</option>
+                            <option>10:00</option>
+                            <option>10:08</option>
+                            <option>10:16</option>
+                            <option>10:24</option>
+                            <option>10:32</option>
+                            <option>10:40</option>
+                            <option>10:48</option>
+                            <option>10:56</option>
+                            <option>11:04</option>
+                            <option>11:12</option>
+                            <option>11:20</option>
+                            <option>11:28</option>
+                            <option>11:36</option>
+                            <option>11:44</option>
+                            <option>11:52</option>
+                            <option>12:00</option>
+                            <option>12:08</option>
+                            <option>12:16</option>
+                            <option>12:24</option>
+                            <option>12:32</option>
+                            <option>12:40</option>
+                            <option>12:48</option>
+                            <option>12:56</option>
+                            <option>13:04</option>
+                            <option>13:12</option>
+                            <option>13:20</option>
+                            <option>13:28</option>
+                            <option>13:36</option>
+                            <option>13:44</option>
+                            <option>13:52</option>
+                            <option>14:00</option>
+                            <option>14:08</option>
+                            <option>14:16</option>
+                            <option>14:24</option>
+                            <option>14:32</option>
+                            <option>14:40</option>
+                            <option>14:48</option>
+                            <option>14:56</option>
+                            <option>15:04</option>
+                            <option>15:12</option>
+                            <option>15:20</option>
+                            <option>15:28</option>
+                            <option>15:36</option>
+                            <option>15:44</option>
+                            <option>15:52</option>
+                            <option>16:00</option>
+                            <option>16:08</option>
+                            <option>16:16</option>
+                            <option>16:24</option>
+                            <option>16:32</option>
+                            <option>16:40</option>
+                            <option>16:48</option>
+                            <option>16:56</option>
+                            <option>17:04</option>
+                            <option>17:12</option>
+                            <option>17:20</option>
+                            <option>17:28</option>
+                            <option>17:36</option>
+                            <option>17:44</option>
+                            <option>17:52</option>
+                            <option>18:00</option>
+                            <option>18:08</option>
+                            <option>18:16</option>
+                            <option>18:24</option>
+                            <option>18:32</option>
+
+                        </select>
+                    </div>
+                    <div class="select is-multiple">
+                        <select name="endtime">
+                            <option selected>End time</option>
+                            <option>07:04</option>
+                            <option>07:12</option>
+                            <option>07:20</option>
+                            <option>07:28</option>
+                            <option>07:36</option>
+                            <option>07:44</option>
+                            <option>07:52</option>
+                            <option>08:00</option>
+                            <option>08:08</option>
+                            <option>08:16</option>
+                            <option>08:24</option>
+                            <option>08:32</option>
+                            <option>08:40</option>
+                            <option>08:48</option>
+                            <option>08:56</option>
+                            <option>09:04</option>
+                            <option>09:12</option>
+                            <option>09:20</option>
+                            <option>09:28</option>
+                            <option>09:36</option>
+                            <option>09:44</option>
+                            <option>09:52</option>
+                            <option>10:00</option>
+                            <option>10:08</option>
+                            <option>10:16</option>
+                            <option>10:24</option>
+                            <option>10:32</option>
+                            <option>10:40</option>
+                            <option>10:48</option>
+                            <option>10:56</option>
+                            <option>11:04</option>
+                            <option>11:12</option>
+                            <option>11:20</option>
+                            <option>11:28</option>
+                            <option>11:36</option>
+                            <option>11:44</option>
+                            <option>11:52</option>
+                            <option>12:00</option>
+                            <option>12:08</option>
+                            <option>12:16</option>
+                            <option>12:24</option>
+                            <option>12:32</option>
+                            <option>12:40</option>
+                            <option>12:48</option>
+                            <option>12:56</option>
+                            <option>13:04</option>
+                            <option>13:12</option>
+                            <option>13:20</option>
+                            <option>13:28</option>
+                            <option>13:36</option>
+                            <option>13:44</option>
+                            <option>13:52</option>
+                            <option>14:00</option>
+                            <option>14:08</option>
+                            <option>14:16</option>
+                            <option>14:24</option>
+                            <option>14:32</option>
+                            <option>14:40</option>
+                            <option>14:48</option>
+                            <option>14:56</option>
+                            <option>15:04</option>
+                            <option>15:12</option>
+                            <option>15:20</option>
+                            <option>15:28</option>
+                            <option>15:36</option>
+                            <option>15:44</option>
+                            <option>15:52</option>
+                            <option>16:00</option>
+                            <option>16:08</option>
+                            <option>16:16</option>
+                            <option>16:24</option>
+                            <option>16:32</option>
+                            <option>16:40</option>
+                            <option>16:48</option>
+                            <option>16:56</option>
+                            <option>17:04</option>
+                            <option>17:12</option>
+                            <option>17:20</option>
+                            <option>17:28</option>
+                            <option>17:36</option>
+                            <option>17:44</option>
+                            <option>17:52</option>
+                            <option>18:00</option>
+                            <option>18:08</option>
+                            <option>18:16</option>
+                            <option>18:24</option>
+                            <option>18:32</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="field">
+                  <div class="control">
+                    <label class="checkbox">
+                      <input type="checkbox", name="addplayers">
+                      Add Jonah, Mark and Stu?</a>
+                    </label>
+                    </div>
+              </div>
+              <div class="field is-grouped">
+                <div class="control">
+                  <button class="button is-link" method="POST">Submit</button>
+                </div>
+                <div class="control">
+                  <button class="button is-link is-light">Cancel</button>
+                </div>
+              </div>
+            </form>
+        </div>
+    </div>
+  </section>
+  <div class="container">
+            {%if booked%}
+            <span class="tag is-success is-medium">{{booked}}</span>
+            {%endif%}
+    </div>
+  </div>
+  <div class="container">
+            {%if login_failed%}
+            <span class="tag is-danger is-medium">{{login_failed}}</span>
+            {%endif%}
+            {%if teetime_unavail%}
+            <span class="tag is-danger is-medium">{{teetime_unavail}}</span>
+            {%endif%}
+            {%if progress%}
+            <span class="tag is-danger is-medium">{{progress}}</span>
+            {%endif%}
+            {%if sesinfo%}
+            <span class="tag is-danger is-medium">{{sesinfo}}</span>
+            {%endif%}
+
+  </div>
+
+  </body>
+  <footer class="footer">
+    <div class="content has-text-centered">
+      <p>
+        <strong>TEELEAF</strong> by <a href="https://github.com/carlisleet">carl0s</a>.
+      </p>
+    </div>
+  </footer>
+</html>
